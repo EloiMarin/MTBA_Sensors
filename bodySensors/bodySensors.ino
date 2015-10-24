@@ -14,9 +14,14 @@ void setup() {
 
 void loop() {
   heartSignal = analogRead(heartPin);
-  //skinSignal = analogRead(skinPin);
+  //skinSignal = analogRead(skinPin);  
+
+  byte msbHeartSignal = heartSignal>>8;  
+  byte lsbHeartSignal = heartSignal&255;
   
-  Serial.print("Heart " + String(heartSignal) + ";");
+  Serial.write(msbHeartSignal);
+  Serial.write(lsbHeartSignal);
+  
   //Serial.print("Skin " + String(skinSignal) + ";");
-  Serial.print("\n");
+  //Serial.print("\n");
 }
