@@ -19,5 +19,6 @@ void loop() {
   
   Serial.write(msbBreathSignal);
   Serial.write(lsbBreathSignal);
-    
+//  Serial.write(breathSignal);
+//  Serial.println(breathSignal);  
 }
