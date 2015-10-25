@@ -7,6 +7,8 @@ int skinSignal = 0;
 
 void setup() {
   Serial.begin(19200);
+  Serial.write(123);
+  delay(100);
 }
 
 void loop() {
