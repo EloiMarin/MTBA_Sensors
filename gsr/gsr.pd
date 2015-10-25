@@ -1,10 +1,54 @@
-#N canvas 86 46 670 574 10;
+#N canvas 428 159 456 265 10;
 #X declare -path ../;
-#X floatatom 179 -147 5 0 0 0 - - -;
-#X msg 218 -322 open COM4;
-#X msg 179 -322 close;
+#N canvas 539 6 768 569 gsrInt 0;
 #X obj 213 -367 path ../;
 #X obj 179 -247 arduinoSerial;
-#X connect 1 0 4 0;
-#X connect 2 0 4 0;
-#X connect 4 0 0 0;
+#X obj 302 54 udpsend;
+#X obj 336 26 packOSC;
+#X floatatom 337 -18 5 0 0 0 - - -;
+#X obj 121 -69 expr ($f1 - $f2)/$f3;
+#X obj 258 -94 -;
+#X obj 254 -119 t b f;
+#X msg 337 7 send /gsr \$1;
+#X obj 219 2 i;
+#X obj 217 -32 * 255;
+#X obj 331 150 nbx 5 25 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
+10 -204786 -1 -1 1 256;
+#X obj 132 130 hsl 256 20 0 1024 0 0 empty empty Max -25 10 0 10 -262130
+-1 -1 25500 1;
+#X obj 129 150 nbx 5 15 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
+10 -262130 -1 -1 1024 256;
+#X obj 132 175 hsl 256 20 0 1024 0 0 empty empty Min -25 12 0 10 -262130
+-1 -1 0 1;
+#X obj 129 195 nbx 5 15 -1e+037 1e+037 0 0 empty empty empty -10 0
+0 10 -262130 -1 -1 0 256;
+#X obj 159 -269 inlet;
+#X obj 300 -255 inlet;
+#X connect 1 0 5 0;
+#X connect 1 0 11 0;
+#X connect 3 0 2 0;
+#X connect 4 0 8 0;
+#X connect 5 0 10 0;
+#X connect 6 0 5 2;
+#X connect 7 0 6 0;
+#X connect 7 1 6 1;
+#X connect 8 0 3 0;
+#X connect 9 0 4 0;
+#X connect 10 0 9 0;
+#X connect 12 0 13 0;
+#X connect 13 0 6 0;
+#X connect 14 0 15 0;
+#X connect 15 0 7 0;
+#X connect 15 0 5 1;
+#X connect 16 0 1 0;
+#X connect 17 0 2 0;
+#X coords 0 -1 1 1 300 125 1 100 100;
+#X restore -147 -455 pd gsrInt;
+#X msg -108 -472 open COM4;
+#X msg -147 -472 close;
+#X msg 85 -472 disconnect;
+#X msg -11 -489 connect 192.168.1.224 9000;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 1;
+#X connect 4 0 0 1;
