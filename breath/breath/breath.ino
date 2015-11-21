@@ -5,7 +5,6 @@
 #include "MTBASerial.h"
 
 int breathPin = A2;
-int breathSignal = 0;
 
 MTBASerial serial;
 
@@ -14,7 +13,7 @@ void setup() {
 }
 
 void loop() {
-  breathSignal = analogRead(breathPin);
+  int breathSignal = analogRead(breathPin);
   serial.send(breathSignal);
   
   delay(16);
