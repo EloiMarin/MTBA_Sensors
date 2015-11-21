@@ -30,6 +30,14 @@ void MTBASerial::write(long data, int channel)
 {
   if (!isValidChannel(channel))
     return;
+
+  byte dataB24 = data >> 24;
+  byte dataB16 = data >> 16;
+  byte dataB8 = data >> 8;
+  byte dataB0 = data & 255;
+
+  byte sendBuffer[7] = { 255, channel, 4, dataB24, dataB16, dataB8, dataB0 };
+  Serial.write(sendBuffer, sizeof(sendBuffer));
 }
 
 boolean MTBASerial::isValidChannel(int channel)
