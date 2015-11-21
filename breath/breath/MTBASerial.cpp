@@ -9,6 +9,9 @@ void MTBASerial::write(byte data, int channel)
 {
   if (!isValidChannel(channel))
     return;
+  
+  byte sendBuffer[5] = { 255, channel, 1, data };
+  Serial.write(sendBuffer, sizeof(sendBuffer));
 }
 
 void MTBASerial::write(int data, int channel)
