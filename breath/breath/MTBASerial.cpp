@@ -10,7 +10,7 @@ void MTBASerial::write(byte data, int channel)
   if (!isValidChannel(channel))
     return;
   
-  byte sendBuffer[5] = { 255, channel, 1, data };
+  byte sendBuffer[4] = { 255, channel, 1, data };
   Serial.write(sendBuffer, sizeof(sendBuffer));
 }
 
@@ -22,7 +22,7 @@ void MTBASerial::write(int data, int channel)
   byte dataMSB = data >> 8;
   byte dataLSB = data & 255;
 
-  byte sendBuffer[6] = { 255, channel, 2, dataMSB, dataLSB };
+  byte sendBuffer[5] = { 255, channel, 2, dataMSB, dataLSB };
   Serial.write(sendBuffer, sizeof(sendBuffer));
 }
 
