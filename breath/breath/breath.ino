@@ -1,13 +1,17 @@
 /*
  Science Hack!
  */
+ 
+#include "MTBASerial.h"
 
 int breathPin = A2;
 int breathSignal = 0;
 
+MTBASerial serial;
+
 void setup() {
-  Serial.begin(19200);
-  Serial.write(123);
+  serial.begin();
+  serial.write(123);
   delay(100);
 }
 
@@ -17,8 +21,8 @@ void loop() {
   byte msbBreathSignal = breathSignal>>8;  
   byte lsbBreathSignal = breathSignal&255;
   
-  Serial.write(msbBreathSignal);
-  Serial.write(lsbBreathSignal);
+  serial.write(msbBreathSignal);
+  serial.write(lsbBreathSignal);
 //  Serial.write(breathSignal);
 //  Serial.println(breathSignal);  
 }
