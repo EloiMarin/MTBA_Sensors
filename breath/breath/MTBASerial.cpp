@@ -5,7 +5,7 @@ void MTBASerial::begin()
   Serial.begin(_baud);
 }
 
-void MTBASerial::write(byte data, int channel)
+void MTBASerial::send(byte data, int channel)
 {
   if (!isValidChannel(channel))
     return;
@@ -14,7 +14,7 @@ void MTBASerial::write(byte data, int channel)
   Serial.write(sendBuffer, sizeof(sendBuffer));
 }
 
-void MTBASerial::write(int data, int channel)
+void MTBASerial::send(int data, int channel)
 {
   if (!isValidChannel(channel))
     return;
@@ -26,7 +26,7 @@ void MTBASerial::write(int data, int channel)
   Serial.write(sendBuffer, sizeof(sendBuffer));
 }
 
-void MTBASerial::write(long data, int channel)
+void MTBASerial::send(long data, int channel)
 {
   if (!isValidChannel(channel))
     return;
