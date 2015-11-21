@@ -1,8 +1,7 @@
-#N canvas 687 328 322 178 10;
-#X declare -path ../;
+#N canvas 960 44 958 235 10;
 #X declare -lib mrpeach;
-#N canvas 509 119 710 507 gsrInt 0;
-#X obj 437 -254 path ../;
+#X declare -path ../PdAbstractions;
+#N canvas 0 44 958 1034 gsrInt 1;
 #X obj 180 -247 arduinoSerial;
 #X obj 302 61 udpsend;
 #X obj 328 33 packOSC;
@@ -13,16 +12,16 @@
 #X msg 329 14 send /gsr \$1;
 #X obj 329 -37 i;
 #X obj 344 -57 * 255;
-#X obj 331 149 nbx 5 25 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
-10 -204786 -1 -1 0 256;
+#X obj 331 149 nbx 5 25 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-204786 -1 -1 0 256;
 #X obj 132 129 hsl 256 20 0 1024 0 0 empty empty Max -25 10 0 10 -262130
 -1 -1 0 1;
-#X obj 129 149 nbx 5 15 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
-10 -262130 -1 -1 0 256;
+#X obj 129 149 nbx 5 15 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262130 -1 -1 0 256;
 #X obj 132 174 hsl 256 20 0 1024 0 0 empty empty Min -25 12 0 10 -262130
 -1 -1 0 1;
-#X obj 129 194 nbx 5 15 -1e+037 1e+037 0 0 empty empty empty -10 0
-0 10 -262130 -1 -1 0 256;
+#X obj 129 194 nbx 5 15 -1e+37 1e+37 0 0 empty empty empty -10 0 0
+10 -262130 -1 -1 0 256;
 #X obj 180 -267 inlet;
 #X obj 302 -255 inlet;
 #X obj 347 -254 import mrpeach;
@@ -34,32 +33,33 @@
 #X msg 399 -166 0;
 #X msg 329 -166 1;
 #X text 333 -110 10-hz update rate;
-#X connect 1 0 5 0;
-#X connect 1 0 11 0;
-#X connect 3 0 2 0;
-#X connect 4 0 8 0;
-#X connect 5 0 10 0;
-#X connect 6 0 5 2;
-#X connect 7 0 6 0;
-#X connect 7 1 6 1;
+#X obj 437 -254 path ../PdAbstractions;
+#X connect 0 0 4 0;
+#X connect 0 0 10 0;
+#X connect 2 0 1 0;
+#X connect 3 0 7 0;
+#X connect 4 0 9 0;
+#X connect 5 0 4 2;
+#X connect 6 0 5 0;
+#X connect 6 1 5 1;
+#X connect 7 0 2 0;
 #X connect 8 0 3 0;
-#X connect 9 0 4 0;
-#X connect 10 0 9 1;
-#X connect 11 0 19 0;
-#X connect 12 0 13 0;
-#X connect 13 0 6 0;
-#X connect 14 0 15 0;
-#X connect 15 0 7 0;
-#X connect 15 0 5 1;
-#X connect 16 0 1 0;
-#X connect 17 0 22 0;
-#X connect 20 0 9 0;
-#X connect 21 0 24 0;
-#X connect 21 1 23 0;
-#X connect 22 0 2 0;
-#X connect 22 1 21 0;
-#X connect 23 0 20 0;
-#X connect 24 0 20 0;
+#X connect 9 0 8 1;
+#X connect 10 0 18 0;
+#X connect 11 0 12 0;
+#X connect 12 0 5 0;
+#X connect 13 0 14 0;
+#X connect 14 0 6 0;
+#X connect 14 0 4 1;
+#X connect 15 0 0 0;
+#X connect 16 0 21 0;
+#X connect 19 0 8 0;
+#X connect 20 0 23 0;
+#X connect 20 1 22 0;
+#X connect 21 0 1 0;
+#X connect 21 1 20 0;
+#X connect 22 0 19 0;
+#X connect 23 0 19 0;
 #X coords 0 -1 1 1 300 125 1 100 100;
 #X restore -147 -455 pd gsrInt;
 #X msg -108 -472 open COM4;
