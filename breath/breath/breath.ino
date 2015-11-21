@@ -15,6 +15,7 @@ void setup() {
 
 void loop() {
   breathSignal = analogRead(breathPin);
-  
   serial.send(breathSignal);
+  
+  delay(16);
 }
