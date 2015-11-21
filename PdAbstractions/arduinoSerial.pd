@@ -1,11 +1,11 @@
-#N canvas 0 44 958 1034 10;
+#N canvas 0 44 1054 1034 10;
 #X obj 67 -41 inlet;
-#X obj 67 125 outlet;
+#X obj 67 102 outlet;
 #X obj 67 28 prepend devicename;
 #X obj 67 -18 route open;
 #X obj 67 5 t a b;
 #X obj 67 79 MTBASerial;
-#X obj 95 102 outlet;
+#X obj 124 102 outlet;
 #X obj 67 56 comport COM 14400;
 #X connect 0 0 3 0;
 #X connect 2 0 7 0;
@@ -13,5 +13,5 @@
 #X connect 3 1 7 0;
 #X connect 4 0 2 0;
 #X connect 5 0 1 0;
-#X connect 5 1 6 0;
+#X connect 5 2 6 0;
 #X connect 7 0 5 0;
