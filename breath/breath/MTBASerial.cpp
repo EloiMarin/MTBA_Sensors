@@ -19,6 +19,12 @@ void MTBASerial::send(int data, word channel)
   if (!isValidChannel(channel))
     return;
 
+  if (sizeof(data) == sizeof(long))
+  {
+    send(static_cast<long>(data), channel);
+    return;
+  }
+
   byte dataMSB = data >> 8;
   byte dataLSB = data & 255;
 
