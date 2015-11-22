@@ -29,15 +29,15 @@ class MTBASerial
   public:
     void begin();
     
-    void send(byte data, int channel = 0);
-    void send(int data, int channel = 0);
-    void send(long data, int channel = 0);
+    void send(byte data, word channel = 0);
+    void send(int data, word channel = 0);
+    void send(long data, word channel = 0);
     
   private:
     const int _baud = 14400;
     const int _maxChannels = 5;
 
-    boolean isValidChannel(int channel);
+    boolean isValidChannel(word channel);
 };
 
 #endif // MTBASerial_h
