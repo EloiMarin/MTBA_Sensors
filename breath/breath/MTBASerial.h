@@ -36,7 +36,7 @@ class MTBASerial
     void send(long data, word channel = 0);
     
   private:
-    const int _baud = 14400;
+    const int _baud = 19200;
     const int _maxChannels = 5;
     const bool _isInt32b;
 
