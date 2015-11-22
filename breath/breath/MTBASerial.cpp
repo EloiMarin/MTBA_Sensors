@@ -19,7 +19,7 @@ void MTBASerial::send(int data, word channel)
   if (!isValidChannel(channel))
     return;
 
-  if (sizeof(data) == sizeof(long))
+  if (_isInt32b)
   {
     send(static_cast<long>(data), channel);
     return;

@@ -27,6 +27,8 @@
 class MTBASerial
 {
   public:
+    MTBASerial() : _isInt32b(sizeof(int) == sizeof(long)) {}
+
     void begin();
     
     void send(byte data, word channel = 0);
@@ -36,6 +38,7 @@ class MTBASerial
   private:
     const int _baud = 14400;
     const int _maxChannels = 5;
+    const bool _isInt32b;
 
     boolean isValidChannel(word channel);
 };
