@@ -1,7 +1,7 @@
-#N canvas 960 44 958 235 10;
+#N canvas 0 44 1054 1034 10;
 #X declare -lib mrpeach;
-#X declare -path ../PdAbstractions;
-#N canvas 0 44 958 1034 gsrInt 1;
+#X declare -path Abstractions;
+#N canvas 0 44 1054 1034 gsrInt 0;
 #X obj 180 -247 arduinoSerial;
 #X obj 302 61 udpsend;
 #X obj 328 33 packOSC;
@@ -33,7 +33,7 @@
 #X msg 399 -166 0;
 #X msg 329 -166 1;
 #X text 333 -110 10-hz update rate;
-#X obj 437 -254 path ../PdAbstractions;
+#X obj 437 -254 path Abstractions;
 #X connect 0 0 4 0;
 #X connect 0 0 10 0;
 #X connect 2 0 1 0;

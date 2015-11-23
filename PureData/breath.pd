@@ -1,6 +1,6 @@
-#N canvas 960 44 958 324 10;
+#N canvas 0 44 1054 1034 10;
 #X declare -lib mrpeach;
-#X declare -path ../PdAbstractions;
+#X declare -path Abstractions;
 #X obj 149 131 t f b;
 #X obj 314 222 i;
 #X obj 339 223 + 1;
@@ -70,7 +70,7 @@
 #X msg 552 206 1;
 #X text 614 230 10-hz update rate;
 #X text 392 142 MISSING CONNECTION;
-#X obj 694 -104 path ../PdAbstractions;
+#X obj 694 -104 path Abstractions;
 #X connect 0 0 30 0;
 #X connect 0 0 45 0;
 #X connect 0 0 46 0;
